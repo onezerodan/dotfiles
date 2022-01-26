@@ -1,0 +1,119 @@
+set encoding=UTF-8
+
+call plug#begin("~/.vim/plugged")
+
+    " Autocompletion
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " Show directories
+	Plug 'preservim/nerdtree'
+
+    " Icons for nerdtree
+	Plug 'ryanoasis/vim-devicons'
+
+    " Airline
+	Plug 'vim-airline/vim-airline'
+    
+    " Themes for airline
+    Plug 'vim-airline/vim-airline-themes'
+
+    " Show hint with keybindings    
+	Plug 'folke/which-key.nvim'
+    
+    " Auto close parentheses
+	Plug 'jiangmiao/auto-pairs'
+
+    " Highlights TABs
+	Plug 'yggdroot/indentline'
+
+    " Preview markdown files in browser
+	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+    
+    "Plug 'nvim-lua/plenary.nvim'
+    
+    " Search files/keywords
+    Plug 'nvim-telescope/telescope.nvim' 
+
+    " Dashboard
+    Plug 'glepnir/dashboard-nvim'
+
+    " Comment in/out lines
+    Plug 'tpope/vim-commentary'
+"	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+    " Highlight code
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
+    " Color theme
+	Plug 'projekt0n/github-nvim-theme'
+
+    " Highlight colors in document
+	Plug 'chrisbra/Colorizer'	
+
+call plug#end()
+
+" Keymaps
+
+filetype on
+
+let mapleader=";"
+
+let g:airline_theme='deus'
+
+" Delete right airline triangle
+let g:airline_skip_empty_sections = 1
+"" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+let g:indentLine_fileTypeExclude = ['dashboard']
+
+let g:dashboard_custom_header = [
+ \ '                                        ▟▙            ',
+ \ '                                        ▝▘            ',
+ \ '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
+ \ '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
+ \ '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
+ \ '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
+ \ '▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+ \ '',
+ \ ]
+
+
+let g:mapleader="\<Space>"
+let g:dashboard_default_executive ='telescope'
+
+map <C-n> :NERDTreeToggle<CR>
+map <C-c> :ColorHighlight<CR>
+
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+
+let g:NERDTreeShowHidden=1
+let g:colorizer_auto_color=1
+set guifont=DroidSansMono\ Nerd\ Font\ 11
+let g:airline_powerline_fonts = 1
+syntax enable
+
+
+"let g:github_transparent= "true"
+colorscheme github_dark
+
+
+set number
+set mouse=a
+set clipboard=unnamedplus
+
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab

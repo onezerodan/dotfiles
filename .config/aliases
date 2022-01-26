@@ -1,0 +1,22 @@
+alias v='nvim'
+alias rezsh='source ~/.zshrc'
+
+alias ls='exa --icons'
+alias lss='ls -1'
+alias lt='ls --tree'
+
+alias xi='sudo xbps-install'
+ 
+alias xr='sudo xbps-remove -R'
+
+alias xq='xbps-query -R'
+
+alias sudov='sudo -E nvim'
+
+alias pokemon='pokemon-colorscripts -r'
+
+alias ponyfetch='neofetch --kitty --size 400 --source /home/cuda/Pictures/var/voidlinuxpony.png'
+
+alias color='/home/cuda/.config/scripts/colorpicker.sh'
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
