@@ -47,6 +47,7 @@ call plug#begin("~/.vim/plugged")
 
     " Color theme
 	Plug 'projekt0n/github-nvim-theme'
+    Plug 'navarasu/onedark.nvim'
 
     " Highlight colors in document
 	Plug 'chrisbra/Colorizer'	
@@ -104,6 +105,13 @@ syntax enable
 
 "let g:github_transparent= "true"
 colorscheme github_dark
+let g:onedark_config = {
+    \ 'style': 'darker',
+\}
+"colorscheme onedark
+
+set cursorline
+
 
 
 set number
