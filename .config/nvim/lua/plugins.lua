@@ -37,13 +37,18 @@ return require('packer').startup(function()
     requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    --  highlight colors
-    use "lilydjwg/colorizer"
-
     -- Auto close parentheses
     use 'jiangmiao/auto-pairs'
 
     -- Dashboard
     use'glepnir/dashboard-nvim'
 
+    -- Highlight tabs 
+    use "lukas-reineke/indent-blankline.nvim"
+
+    -- Highlight colors
+    use 'norcalli/nvim-colorizer.lua'
+
+    -- Commenting lines
+    use 'terrortylor/nvim-comment'
 end)

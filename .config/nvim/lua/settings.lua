@@ -3,7 +3,10 @@ local exec = vim.api.nvim_exec  -- execute Vimscript
 local g = vim.g                 -- global variables
 local opt = vim.opt             -- global/buffer/windows-scoped options
 
+g.mapleader = " "
+--g.indentLine_fileTypeExclude = ['dashboard']
 
+opt.termguicolors = true 
 opt.ignorecase = true -- ignore case in search patterns
 opt.clipboard = "unnamedplus" -- system clipboard
 opt.mouse = "a" -- enable mouse
@@ -22,6 +25,11 @@ opt.tabstop = 4           -- 1 tab == 4 spaces
 
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
+--
+--require 'colorizer'.setup()
+
+require('nvim_comment').setup()
+
 require'nvim-tree'.setup {
   disable_netrw        = false,
   hijack_netrw         = true,
@@ -93,8 +101,11 @@ require'nvim-tree'.setup {
 }
 
 require('lualine').setup {
-    options = { theme  = "github" }, 
-}
+    options = { 
+        theme  = "github",
+        -- section_separators = { left = '', right = '' },
+        
+}}
 
 
 
