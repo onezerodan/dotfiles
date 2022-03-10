@@ -5,6 +5,9 @@ export XCURSOR_THEME="Phinger Cursors"
 # PATH variables
 
 export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+
+
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:~/.config/scripts/
 
 export JAVA_HOME=/usr/lib/jvm/openjdk17
